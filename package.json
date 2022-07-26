@@ -6,7 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech/issues"
+  },
+  "homepage": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "NimbusTech",
   "license": "ISC",
   "peerDependencies": {
     "eslint": ">= 3"
