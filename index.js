@@ -13,6 +13,7 @@ module.exports = {
                 pathGroupsExcludedImportTypes: ['builtin'],
             },
         ],
+        'unused-imports/no-unused-imports': 'error',
         '@typescript-eslint/naming-convention': [
             'error',
             {
