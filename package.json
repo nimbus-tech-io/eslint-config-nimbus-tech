@@ -1,25 +1,26 @@
 {
-  "name": "eslint-config-nimbus-tech",
-  "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech/issues"
-  },
-  "homepage": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech",
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": "NimbusTech",
-  "license": "ISC",
-  "peerDependencies": {
-    "eslint": ">= 3"
-  }
+    "name": "eslint-config-nimbus-tech",
+    "version": "1.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech/issues"
+    },
+    "homepage": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech",
+    "publishConfig": {
+        "access": "public"
+    },
+    "author": "NimbusTech",
+    "license": "ISC",
+    "peerDependencies": {
+        "eslint": ">= 3",
+        "eslint-plugin-unused-imports": ">= 2"
+    }
 }
