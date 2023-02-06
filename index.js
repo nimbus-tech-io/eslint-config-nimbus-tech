@@ -23,7 +23,7 @@ module.exports = {
             },
             {
                 selector: 'function',
-                format: ['PascalCase'],
+                format: ['camelCase'],
                 leadingUnderscore: 'allow',
                 trailingUnderscore: 'allow',
             },
@@ -56,4 +56,4 @@ module.exports = {
             },
         ],
     },
-}
+};
