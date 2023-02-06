@@ -1,16 +1,18 @@
-# NimbusTech ESLINT CONFIG
-
-
+# NimbusTech eslint Config
 
 ## How to use
 
 `yarn add eslint-config-nimbus-tech`
 
-Add to `extends` in `eslintrc.js` as 
+Add to `extends` in `eslintrc.js` as
 
-`extends: [
-    'nimbus-tech',
-]`
+```
+extends: [
+  'nimbus-tech',
+]
+```
+
+**Be sure to install all peer dependencies!**
 
 ## How to add new rules?
 
