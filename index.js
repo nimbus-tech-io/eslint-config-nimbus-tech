@@ -56,5 +56,16 @@ module.exports = {
         format: null, // TODO: Ask
       },
     ],
+    'check-file/filename-naming-convention': [
+      'error',
+      {
+        '**/*.{js,ts}': 'KEBAB_CASE',
+      },
+      {
+        ignoreMiddleExtensions: true,
+      },
+    ],
+    'check-file/folder-naming-convention': ['error', { 'src/**/': 'KEBAB_CASE' }],
   },
+  plugins: ['check-file'],
 };
