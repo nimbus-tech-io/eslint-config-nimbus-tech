@@ -1,9 +1,7 @@
 module.exports = {
   rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-explicit-any': 'error',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'import/order': [
       'error',
@@ -20,23 +18,23 @@ module.exports = {
         selector: 'default',
         format: ['strictCamelCase'],
         leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'function',
         format: ['strictCamelCase'],
         leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'variable',
-        format: ['strictCamelCase', 'PascalCase', 'UPPER_CASE'],
+        format: ['strictCamelCase', 'StrictPascalCase', 'UPPER_CASE'],
         leadingUnderscore: 'allow',
         trailingUnderscore: 'allow',
       },
       {
         selector: 'typeLike',
-        format: ['PascalCase'],
+        format: ['StrictPascalCase'],
       },
       {
         selector: 'method',
@@ -49,11 +47,15 @@ module.exports = {
       },
       {
         selector: 'enum',
-        format: ['PascalCase'],
+        format: ['StrictPascalCase'],
       },
       {
-        selector: 'property',
-        format: null, // TODO: Ask
+        selector: 'interface',
+        format: ['StrictPascalCase'],
+        custom: {
+          regex: '^I[A-Z]',
+          match: false,
+        },
       },
     ],
     'check-file/filename-naming-convention': [
