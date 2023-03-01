@@ -2,6 +2,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/ban-types': 'off',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'import/order': [
       'error',
