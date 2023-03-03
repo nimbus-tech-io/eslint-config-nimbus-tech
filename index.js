@@ -1,9 +1,11 @@
 module.exports = {
+  plugins: ['import', 'unused-imports', 'check-file'],
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/ban-types': 'off',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+
     'import/order': [
       'error',
       {
@@ -12,7 +14,9 @@ module.exports = {
         pathGroupsExcludedImportTypes: ['builtin'],
       },
     ],
+
     'unused-imports/no-unused-imports': 'error',
+
     '@typescript-eslint/naming-convention': [
       'error',
       {
@@ -31,7 +35,7 @@ module.exports = {
         selector: 'variable',
         format: ['strictCamelCase', 'StrictPascalCase', 'UPPER_CASE'],
         leadingUnderscore: 'allow',
-        trailingUnderscore: 'allow',
+        trailingUnderscore: 'forbid',
       },
       {
         selector: 'typeLike',
@@ -58,7 +62,12 @@ module.exports = {
           match: false,
         },
       },
+      {
+        selector: 'objectLiteralProperty',
+        format: ['UPPER_CASE', 'strictCamelCase'],
+      },
     ],
+
     'check-file/filename-naming-convention': [
       'error',
       {
@@ -70,5 +79,4 @@ module.exports = {
     ],
     'check-file/folder-naming-convention': ['error', { 'src/**/': 'KEBAB_CASE' }],
   },
-  plugins: ['check-file'],
 };
