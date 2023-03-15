@@ -1,18 +1,18 @@
-import pluginImport from "eslint-plugin-import";
-import unusedImports from "eslint-plugin-unused-imports";
-import checkFile from "eslint-plugin-check-file";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import prettier from "eslint-plugin-prettier";
+import pluginImport from 'eslint-plugin-import';
+import unusedImports from 'eslint-plugin-unused-imports';
+import checkFile from 'eslint-plugin-check-file';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import prettier from 'eslint-plugin-prettier';
 import tsParser from '@typescript-eslint/parser';
 
 export default [
   {
     plugins: {
-      "import": pluginImport,
-      "unused-imports": unusedImports,
-      "check-file": checkFile,
-      "@typescript-eslint": typescriptEslint,
-      "prettier": prettier,
+      import: pluginImport,
+      'unused-imports': unusedImports,
+      'check-file': checkFile,
+      '@typescript-eslint': typescriptEslint,
+      prettier: prettier,
     },
     languageOptions: {
       parser: tsParser,
@@ -20,7 +20,7 @@ export default [
         ecmaFeatures: { modules: true },
         ecmaVersion: 'latest',
         project: './tsconfig.json',
-      }
+      },
     },
     files: ['app/**/*.ts', 'app/**/*.tsx'],
     rules: {
@@ -32,7 +32,7 @@ export default [
       'import/order': [
         'error',
         {
-          alphabetize: {order: 'asc'},
+          alphabetize: { order: 'asc' },
           'newlines-between': 'always',
           pathGroupsExcludedImportTypes: ['builtin'],
         },
@@ -89,6 +89,12 @@ export default [
           selector: 'objectLiteralProperty',
           format: ['UPPER_CASE', 'strictCamelCase'],
         },
+        {
+          selector: 'parameter',
+          format: ['strictCamelCase', 'StrictPascalCase'],
+          leadingUnderscore: 'allow',
+          trailingUnderscore: 'forbid',
+        },
       ],
 
       'check-file/filename-naming-convention': [
@@ -100,7 +106,7 @@ export default [
           ignoreMiddleExtensions: true,
         },
       ],
-      'check-file/folder-naming-convention': ['error', {'app/**/': 'KEBAB_CASE'}],
-    }
-  }
+      'check-file/folder-naming-convention': ['error', { 'app/**/': 'KEBAB_CASE' }],
+    },
+  },
 ];
