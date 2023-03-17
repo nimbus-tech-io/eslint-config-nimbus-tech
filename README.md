@@ -1,4 +1,4 @@
-# Nimbus Tech eslint config
+# Nimbus Tech Flat ESLint Config
 
 Welcome to the config! All Nimbus Tech projects should use this eslint config to ensure a consistent coding style.
 
@@ -8,14 +8,17 @@ Install it via:
 
 `yarn add eslint-config-nimbus-tech`
 
-And then add it to the `extends` array in your `eslintrc.js`:
+And then add it to your `eslint.config.js` file:
 
 ```js
-extends: [
-  // other rulesets...,
-  'nimbus-tech',
-  'prettier'
-]
+import nimbusConfig from 'eslint-config-nimbus-tech';
+
+export default [
+  ...nimbusConfig, 
+  { 
+    /** your custom config goes here **/ 
+  }
+];
 ```
 
 ## How to add new rules?
