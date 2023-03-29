@@ -49,7 +49,7 @@ export default [
         },
         {
           selector: 'function',
-          format: ['strictCamelCase'],
+          format: ['strictCamelCase', 'StrictPascalCase'],
           leadingUnderscore: 'allow',
           trailingUnderscore: 'forbid',
         },
