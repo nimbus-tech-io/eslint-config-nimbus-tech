@@ -22,7 +22,6 @@ export default [
         project: './tsconfig.json',
       },
     },
-    files: ['app/**/*.ts', 'app/**/*.tsx'],
     rules: {
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
