@@ -8,18 +8,45 @@ Install it via:
 
 `yarn add eslint-config-nimbus-tech`
 
-And then add it to your `eslint.config.js` file:
+And then add it to your `eslint.config.mjs` file:
 
 ```js
 import nimbusConfig from 'eslint-config-nimbus-tech';
 
 export default [
-  ...nimbusConfig, 
-  { 
-    /** your custom config goes here **/ 
-  }
+  ...nimbusConfig,
+  {
+    /** your custom config goes here **/
+  },
 ];
 ```
+
+Then you can lint via
+
+```
+ESLINT_USE_FLAT_CONFIG=true eslint -c eslint.config.mjs .
+```
+
+We use the .mjs extension so that we can use modules regardless of the "type" property in our `package.json` file.
+
+### Setup with VS Code
+
+Add a `.vscode` directory inside of the project if you don't have one already.
+
+Then add a `settings.json` file if you don't have one already.
+
+Inside of it, add the following:
+
+```json
+{
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  }
+}
+```
+
+Note: You need to have the VS Code Eslint plugin for this to be relevant.
 
 ## How to add new rules?
 
