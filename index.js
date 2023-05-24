@@ -99,13 +99,16 @@ export default [
       'check-file/filename-naming-convention': [
         'error',
         {
-          '**/*.{js,ts}': 'KEBAB_CASE',
+          '**/*.{js,ts,tsx}': 'KEBAB_CASE',
         },
         {
           ignoreMiddleExtensions: true,
         },
       ],
-      'check-file/folder-naming-convention': ['error', { 'app/**/': 'KEBAB_CASE' }],
+      'check-file/folder-naming-convention': [
+        'error',
+        { 'src/**/': 'KEBAB_CASE', 'app/**/': 'KEBAB_CASE', 'pages/**/': 'KEBAB_CASE' },
+      ],
     },
   },
 ];
