@@ -7,6 +7,7 @@ import tsParser from '@typescript-eslint/parser';
 
 export default [
   {
+    files: ['**/*.ts', '**/*.tsx'],
     plugins: {
       import: pluginImport,
       'unused-imports': unusedImports,
@@ -25,6 +26,7 @@ export default [
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/ban-types': 'off',
+
       'prettier/prettier': ['error', {}, { usePrettierrc: true }],
 
       'import/order': [
@@ -98,13 +100,16 @@ export default [
       'check-file/filename-naming-convention': [
         'error',
         {
-          '**/*.{js,ts}': 'KEBAB_CASE',
+          '**/*.{js,ts,tsx}': 'KEBAB_CASE',
         },
         {
           ignoreMiddleExtensions: true,
         },
       ],
-      'check-file/folder-naming-convention': ['error', { 'app/**/': 'KEBAB_CASE' }],
+      'check-file/folder-naming-convention': [
+        'error',
+        { 'src/**/': 'KEBAB_CASE', 'app/**/': 'KEBAB_CASE', 'pages/**/': 'KEBAB_CASE' },
+      ],
     },
   },
 ];
