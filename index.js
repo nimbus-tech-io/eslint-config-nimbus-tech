@@ -7,6 +7,7 @@ import tsParser from '@typescript-eslint/parser';
 
 export default [
   {
+    files: ['**/*.ts', '**/*.tsx'],
     plugins: {
       import: pluginImport,
       'unused-imports': unusedImports,
