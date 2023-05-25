@@ -6,7 +6,9 @@ Welcome to the config! All Nimbus Tech projects should use this eslint config to
 
 Install it via:
 
-`yarn add eslint-config-nimbus-tech`
+`yarn add -D eslint-config-nimbus-tech@latest`
+
+Note: You don't need `eslint` as a dependency because it's already included.
 
 And then add it to your `eslint.config.mjs` file:
 
@@ -47,6 +49,72 @@ Inside of it, add the following:
 ```
 
 Note: You need to have the VS Code Eslint plugin for this to be relevant.
+
+### Next.js project example
+
+```js
+import nimbusTechConfig from 'eslint-config-nimbus-tech';
+import nextPlugin from '@next/eslint-plugin-next';
+import reactPlugin from 'eslint-plugin-react';
+import hooksPlugin from 'eslint-plugin-react-hooks';
+
+export default [
+  {
+    plugins: {
+      react: reactPlugin,
+    },
+    rules: {
+      ...reactPlugin.configs['jsx-runtime'].rules,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+  {
+    plugins: {
+      'react-hooks': hooksPlugin,
+    },
+    rules: hooksPlugin.configs.recommended.rules,
+  },
+  {
+    plugins: {
+      '@next/next': nextPlugin,
+    },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+      '@next/next/no-img-element': 'error',
+    },
+  },
+  ...nimbusTechConfig,
+  {
+    ignores: ['.next/*', '*.cjs'],
+  },
+];
+```
+
+You need to install `@next/eslint-plugin-next`, `eslint-plugin-react` and `eslint-plugin-react-hooks` as dev dependencies.
+
+### Monorepo projects
+
+Place the file in the root of the directory, and then define a lint command for each of the submodules like this
+
+```json
+"lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs ."
+```
+
+And in the root `package.json`, have a command that runs all the `lint` commands of the submodules.
+
+```js
+export default [
+  ...nimbusConfig,
+  {
+    ignores: ['**/.turbo/*', '**/cdk.out/*'],
+  },
+];
+```
 
 ## How to add new rules?
 
