@@ -97,12 +97,36 @@ export default [
 
 You need to install `@next/eslint-plugin-next`, `eslint-plugin-react` and `eslint-plugin-react-hooks` as dev dependencies.
 
+### Node.js with jest projects
+
+```js
+import nimbusConfig from 'eslint-config-nimbus-tech';
+import jestPlugin from 'eslint-plugin-jest';
+
+export default [
+    {
+        plugins: {
+            jest: jestPlugin,
+        },
+        rules: {
+            ...jestPlugin.configs.recommended.rules,
+        },
+    },
+    ...nimbusConfig,
+    {
+        ignores: ['**/dist/*'],
+    },
+];
+```
+
+You need to install `eslint-plugin-jest` as dev dependency.
+
 ### Monorepo projects
 
 Place the file in the root of the directory, and then define a lint command for each of the submodules like this
 
-```json
-"lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs ."
+```
+"lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./eslint.config.mjs .",
 ```
 
 And in the root `package.json`, have a command that runs all the `lint` commands of the submodules.
@@ -181,7 +205,7 @@ function convertBackendResponseToUiModel(response: any) {
     // changing in the future other
     // than running the app and it
     // failing in runtime
-    name: response.user.name;
+    name: response.user.name
   }
 }
 ```
@@ -197,7 +221,7 @@ function convertBackendResponseToUiModel(response: unknown) {
     // idea what the type is, and yet
     // you're accessing fields on
     // it - how can you be sure they exist?
-    name: response.user.name;
+    name: response.user.name
   }
 }
 ```
@@ -217,7 +241,7 @@ function convertBackendResponseToUiModel(response: Response) {
     // This now works, although it
     // still misses tests to
     // confirm behavior
-    name: response.user.name;
+    name: response.user.name
   }
 }
 ```
