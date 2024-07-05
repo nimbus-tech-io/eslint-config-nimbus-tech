@@ -3,6 +3,10 @@
   "version": "2.0.5",
   "description": "",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./legacy": "./eslintrc.cjs"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nimbus-tech-io/eslint-config-nimbus-tech.git"
@@ -14,7 +18,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "NimbusTech",
+  "author": "Nimbus Tech",
   "license": "ISC",
   "peerDependencies": {},
   "type": "module",
@@ -22,6 +26,7 @@
     "@rushstack/eslint-config": "^3.3.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
+    "@eslint/eslintrc": "^1.0.0",
     "eslint": "^8.41.0",
     "eslint-plugin-check-file": "^2.3.0",
     "eslint-plugin-import": "^2.27.5",
